@@ -1,0 +1,9 @@
+.board {
+  // component for board
+
+  &__cell {
+    background-color: beige;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+  }
+}

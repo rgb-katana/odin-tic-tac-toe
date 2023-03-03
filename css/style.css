@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  color: white; }
+
+.board__cell {
+  background-color: beige;
+  aspect-ratio: 1 / 1;
+  width: 100%; }
+
+.game {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .game__control {
+    margin-bottom: 3rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem; }
+  .game__board {
+    background-color: azure;
+    width: 80%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 3rem; }
+  .game__buttons {
+    display: flex; }
+
+.home {
+  background-color: black;
+  padding: 3rem; }

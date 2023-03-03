@@ -1,0 +1,35 @@
+.game {
+  max-width: 1140px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__control {
+    margin-bottom: 3rem;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+  }
+
+  &__board {
+    background-color: azure;
+    width: 80%;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    margin-bottom: 3rem;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+}
