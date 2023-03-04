@@ -1,13 +1,15 @@
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import "components/board";
-@import "components/game";
-@import "components/inputs";
-@import "components/button";
+@import 'components/board';
+@import 'components/game';
+@import 'components/inputs';
+@import 'components/button';
+@import 'components/winner';
 
-@import "pages/home";
+@import 'pages/home';

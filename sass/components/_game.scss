@@ -1,43 +1,104 @@
 .game {
   max-width: 1140px;
+  margin: 0 auto;
   padding: 2rem;
   height: 100vh;
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__player--1 {
+    color: coral;
+  }
+
+  &__player--2 {
+    color: cornflowerblue;
+  }
 
   &__control {
-    margin-bottom: 3rem;
-
-    // Возможно поменять
-    width: 50vh;
+    width: 80%;
 
     display: flex;
     justify-content: space-between;
-    font-size: 1rem;
+    align-self: bottom;
+
+    margin-bottom: 2rem;
   }
 
   &__board {
     background-color: azure;
 
     // Возможно поменять
-    height: 50vh;
+    width: 80%;
     aspect-ratio: 1 / 1;
-    padding: 2rem;
+    padding: 1rem;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 2rem;
-
-    margin-bottom: 3rem;
+    grid-gap: 1rem;
   }
 
   &__buttons {
+    margin-top: 2rem;
     display: flex;
-    width: 20vh;
+    width: 80%;
     justify-content: space-between;
+  }
+
+  &__circle {
+    fill: coral;
+    animation: slide-down 0.5s ease-in;
+  }
+
+  &__cross {
+    fill: cornflowerblue;
+    animation: slide-down 0.5s ease-in;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .start {
+    background-color: chartreuse;
+  }
+
+  .refresh {
+    background-color: cadetblue;
+  }
+
+  .finish {
+    background-color: red;
+  }
+}
+
+svg {
+  pointer-events: none;
+}
+
+.rotate {
+  animation: rotate 2s ease-in-out;
+}
+
+@media only screen and (max-width: 500px) {
+  .game {
+    padding: 0;
+  }
+
+  .game__control {
+    width: 90%;
+  }
+
+  .game__board {
+    width: 90%;
+  }
+
+  .game__buttons {
+    width: 90%;
   }
 }

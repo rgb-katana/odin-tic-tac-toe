@@ -1,11 +1,12 @@
 .inputs {
-  position: absolute;
+  position: fixed;
+  animation: appear 0.5s ease-out;
 
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: cadetblue;
+  background-color: black;
 
   display: flex;
   justify-content: center;
@@ -20,17 +21,23 @@
 
   &__legend {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   &__elem {
     display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
     text-align: center;
+    font-size: 2.5rem;
   }
 
   &__button {
     width: 100%;
+    font-size: 2.5rem;
+    background-color: blanchedalmond;
   }
+}
+
+.disappear {
+  animation: disappear 0.5s ease-out;
 }

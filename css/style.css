@@ -1,3 +1,33 @@
+@keyframes appear {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes disappear {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes slide-down {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(1); }
+  25% {
+    transform: rotate(0) scale(0.5); }
+  50% {
+    transform: rotate(180deg) scale(0.5); }
+  75% {
+    transform: rotate(360deg) scale(0.5); }
+  100% {
+    transform: rotate(360deg) scale(1); } }
+
 *,
 *::after,
 *::before {
@@ -7,54 +37,109 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
 
 body {
-  color: white; }
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif; }
+
+.button {
+  font-family: 'Roboto', sans-serif; }
 
 .board__cell {
   background-color: beige;
   aspect-ratio: 1 / 1;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .game {
   max-width: 1140px;
+  margin: 0 auto;
   padding: 2rem;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center; }
+  flex-direction: column; }
+  .game__player--1 {
+    color: coral; }
+  .game__player--2 {
+    color: cornflowerblue; }
   .game__control {
-    margin-bottom: 3rem;
-    width: 50vh;
+    width: 80%;
     display: flex;
     justify-content: space-between;
-    font-size: 1rem; }
+    align-self: bottom;
+    margin-bottom: 2rem; }
   .game__board {
     background-color: azure;
-    height: 50vh;
+    width: 80%;
     aspect-ratio: 1 / 1;
-    padding: 2rem;
+    padding: 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 2rem;
-    margin-bottom: 3rem; }
+    grid-gap: 1rem; }
   .game__buttons {
+    margin-top: 2rem;
     display: flex;
-    width: 20vh;
+    width: 80%;
     justify-content: space-between; }
+  .game__circle {
+    fill: coral;
+    animation: slide-down 0.5s ease-in; }
+  .game__cross {
+    fill: cornflowerblue;
+    animation: slide-down 0.5s ease-in; }
+  .game__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .game .start {
+    background-color: chartreuse; }
+  .game .refresh {
+    background-color: cadetblue; }
+  .game .finish {
+    background-color: red; }
+
+svg {
+  pointer-events: none; }
+
+.rotate {
+  animation: rotate 2s ease-in-out; }
+
+@media only screen and (max-width: 500px) {
+  .game {
+    padding: 0; }
+  .game__control {
+    width: 90%; }
+  .game__board {
+    width: 90%; }
+  .game__buttons {
+    width: 90%; } }
 
 .inputs {
-  position: absolute;
+  position: fixed;
+  animation: appear 0.5s ease-out;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: cadetblue;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,20 +150,52 @@ body {
     border-style: solid; }
   .inputs__legend {
     text-align: center;
-    font-size: 1.5rem; }
+    font-size: 2.5rem; }
   .inputs__elem {
     display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    text-align: center; }
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2.5rem; }
   .inputs__button {
-    width: 100%; }
+    width: 100%;
+    font-size: 2.5rem;
+    background-color: blanchedalmond; }
+
+.disappear {
+  animation: disappear 0.5s ease-out; }
 
 .button {
   border: none;
   border-radius: 0;
   padding: 0.5rem 1rem;
-  font-weight: 700; }
+  font-weight: 700;
+  text-transform: uppercase; }
+  .button__image {
+    width: 3rem;
+    height: 3rem; }
+  .button:hover, .button:active {
+    background-color: aliceblue; }
+
+.winner {
+  position: fixed;
+  animation: appear 0.5s ease-out;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .winner__button {
+    margin-top: 3rem;
+    padding: 1rem 1.5rem;
+    background-color: aquamarine; }
+  .winner__name--1 {
+    color: coral; }
+  .winner__name--2 {
+    color: cornflowerblue; }
 
 .home {
   background-color: black;

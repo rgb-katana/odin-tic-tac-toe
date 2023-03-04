@@ -1,0 +1,29 @@
+.winner {
+  position: fixed;
+  animation: appear 0.5s ease-out;
+
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__button {
+    margin-top: 3rem;
+    padding: 1rem 1.5rem;
+    background-color: aquamarine;
+  }
+
+  &__name--1 {
+    color: coral;
+  }
+
+  &__name--2 {
+    color: cornflowerblue;
+  }
+}

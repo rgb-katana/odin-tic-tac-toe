@@ -3,4 +3,16 @@
   border-radius: 0;
   padding: 0.5rem 1rem;
   font-weight: 700;
+
+  text-transform: uppercase;
+
+  &__image {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &:hover,
+  &:active {
+    background-color: aliceblue;
+  }
 }
