@@ -1,6 +1,7 @@
 .game {
   max-width: 1140px;
-  margin: 0 auto;
+  padding: 2rem;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -9,16 +10,21 @@
 
   &__control {
     margin-bottom: 3rem;
-    width: 80%;
+
+    // Возможно поменять
+    width: 50vh;
 
     display: flex;
     justify-content: space-between;
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   &__board {
     background-color: azure;
-    width: 80%;
+
+    // Возможно поменять
+    height: 50vh;
+    aspect-ratio: 1 / 1;
     padding: 2rem;
 
     display: grid;
@@ -31,5 +37,7 @@
 
   &__buttons {
     display: flex;
+    width: 20vh;
+    justify-content: space-between;
   }
 }
