@@ -36,7 +36,8 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  position: relative; }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -69,8 +70,8 @@ body {
 .game {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 2rem;
-  height: 100vh;
+  padding: 4rem;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,14 +124,13 @@ svg {
   animation: rotate 2s ease-in-out; }
 
 @media only screen and (max-width: 500px) {
-  .game {
-    padding: 0; }
   .game__control {
     width: 90%; }
   .game__board {
     width: 90%; }
   .game__buttons {
-    width: 90%; } }
+    width: 90%;
+    flex-direction: column; } }
 
 .inputs {
   position: fixed;
@@ -198,6 +198,4 @@ svg {
     color: cornflowerblue; }
 
 .home {
-  background-color: black;
-  height: 100vh;
-  position: relative; }
+  background-color: black; }
