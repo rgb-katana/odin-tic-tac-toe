@@ -48,8 +48,8 @@ const displayControl = (function () {
     boardContainer.innerHTML = '';
     let boardHTML = '';
     let curElem = 0;
-    for (row of curBoardArr) {
-      for (cell of row) {
+    for (let row of curBoardArr) {
+      for (let cell of row) {
         boardHTML += `<div class="board__cell" data-coordinates="${curBoardArr.indexOf(
           row
         )};${curElem}" data-is-taken="false"></div>`;
@@ -112,7 +112,7 @@ const displayControl = (function () {
 const gameControl = (function () {
   // Current player;
 
-  curPlayer = 1;
+  let curPlayer = 1;
 
   // Control game flow;
 
@@ -124,6 +124,7 @@ const gameControl = (function () {
     startBtn.addEventListener('click', function (e) {
       e.preventDefault();
       document.querySelector('.inputs')?.remove();
+      gameControl.refreshGame(true);
       home.insertAdjacentHTML(
         'afterbegin',
         `
@@ -163,6 +164,7 @@ const gameControl = (function () {
         if (player1Obj.playerName) {
           player1Obj.currentMoves.clear();
           player2Obj.currentMoves.clear();
+          curPlayer = 1;
         }
       });
     }
@@ -226,13 +228,13 @@ const gameControl = (function () {
       for (let win of WINS) {
         let counterFirstPlayer = 0;
         let counterSecondPlayer = 0;
-        for (move of player1Obj.currentMoves) {
+        for (let move of player1Obj.currentMoves) {
           if (win.has(move)) {
             counterFirstPlayer++;
           }
         }
 
-        for (move of player2Obj.currentMoves) {
+        for (let move of player2Obj.currentMoves) {
           if (win.has(move)) {
             counterSecondPlayer++;
           }
@@ -257,7 +259,7 @@ const gameControl = (function () {
             .addEventListener('click', function () {
               document.querySelector('.winner').classList.add('disappear');
               setTimeout(function () {
-                document.querySelector('.winner').remove();
+                document.querySelector('.winner')?.remove();
               }, 490);
             });
         }
@@ -281,7 +283,7 @@ const gameControl = (function () {
             .addEventListener('click', function () {
               document.querySelector('.winner').classList.add('disappear');
               setTimeout(function () {
-                document.querySelector('.winner').remove();
+                document.querySelector('.winner')?.remove();
               }, 490);
             });
         }
