@@ -1,3 +1,5 @@
+import './sass/main.scss';
+
 const boardContainer = document.querySelector('.game__board');
 const entireGame = document.querySelector('.game');
 
